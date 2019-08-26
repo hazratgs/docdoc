@@ -1,14 +1,21 @@
-export interface IFormData {
+export interface IContactData {
   firstName: string
   lastName: string
   phone: string
   email: string
+}
+
+export interface IDeliveryData {
   country: string
   city: string
   index: string
   address: string
   deliveryDate: string
   comment: string
+}
+
+export interface IFormData extends IContactData, IDeliveryData {
+
 }
 
 interface IForm extends IFormData {

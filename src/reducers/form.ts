@@ -1,16 +1,23 @@
 import { createReducer } from 'redux-act'
 import * as actions from '../actions/form'
-import IForm from '../types/form'
+import IForm, { IContactData, IDeliveryData } from '../types/form'
 
-const contactData = {
+const clearFields = <T extends Array<string>, U extends IDeliveryData | IContactData>(items: T, object: U) =>
+  items.filter((item: string) => {
+    const keys = Object.keys(object)
+    if (keys.includes(item)) return false
+    return true
+  })
+
+const contactData: IContactData = {
   firstName: '',
   lastName: '',
   phone: '',
   email: ''
 }
 
-const deliveryData = {
-  country: '',
+const deliveryData: IDeliveryData = {
+  country: 'Россия',
   city: '',
   index: '',
   address: '',
@@ -49,31 +56,15 @@ reducer.on(actions.errorsFields, (state, payload: string[]) => ({
 reducer.on(actions.clearDeliveryData, (state) => ({
   ...state,
   ...deliveryData,
-  checked: state.checked.filter((item: string) => {
-    const keys = Object.keys(deliveryData)
-    if (keys.includes(item)) return false
-    return true
-  }),
-  errors: state.errors.filter((item: string) => {
-    const keys = Object.keys(deliveryData)
-    if (keys.includes(item)) return false
-    return true
-  })
+  checked: clearFields([...state.checked], deliveryData),
+  errors: clearFields([...state.errors], deliveryData)
 }))
 
 reducer.on(actions.clearContactData, (state) => ({
   ...state,
   ...contactData,
-  checked: state.checked.filter((item: string) => {
-    const keys = Object.keys(contactData)
-    if (keys.includes(item)) return false
-    return true
-  }),
-  errors: state.errors.filter((item: string) => {
-    const keys = Object.keys(contactData)
-    if (keys.includes(item)) return false
-    return true
-  })
+  checked: clearFields([...state.checked], contactData),
+  errors: clearFields([...state.errors], contactData)
 }))
 
 reducer.on(actions.changeDisabledContactPage, (state, payload) => ({
