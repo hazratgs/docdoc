@@ -19,3 +19,8 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
+
+export const ErrorMessage = styled.p`
+  color: #bd6f6c;
+  font-size: 14px;
+`

@@ -5,6 +5,7 @@ import { Container } from './styles'
 
 import ContactForm from '../../containers/ContactForm'
 import DeliveryForm from '../../containers/DeliveryForm'
+import SuccessAlert from '../../containers/SuccessAlert'
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <Switch>
         <Route path='/' exact component={ContactForm} />
         <Route path='/delivery' exact component={DeliveryForm} />
+        <Route path='/success' exact component={SuccessAlert} />
       </Switch>
     </Container>
   )

@@ -1,5 +1,9 @@
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import { NavLink, NavLinkProps } from 'react-router-dom'
+
+interface IPropsLink {
+  disabled?: boolean
+}
 
 export const Container = styled.div`
   border-bottom: 1px solid #e0e0e0;
@@ -7,7 +11,7 @@ export const Container = styled.div`
   margin-bottom: 10px;
 `
 
-export const Item = styled(NavLink)`
+export const Item = styled(NavLink)<IPropsLink>`
   padding: 15px;
   text-decoration: none;
   color: #4e87be;
@@ -21,4 +25,9 @@ export const Item = styled(NavLink)`
     border-bottom: transparent;
     background-color: #fff;
   }
+
+  ${props => props.disabled && `
+    cursor: default;
+    pointer-events: none;
+  `}
 `

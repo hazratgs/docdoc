@@ -55,7 +55,7 @@ export const Container = styled.div<Props>`
     }
 
     input {
-      border-color: #bd6f6c;
+      border-color: #bd6f6c!important;
     }
   `}
 
@@ -65,7 +65,7 @@ export const Container = styled.div<Props>`
     }
 
     input {
-      border-color: #3b763d;
+      border-color: #3b763d!important;
     }
   `}
 `

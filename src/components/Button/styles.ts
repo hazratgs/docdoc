@@ -12,6 +12,11 @@ export const Button = styled.button`
   color: #fff;
   cursor: pointer;
 
+  &:disabled {
+    opacity: .4!important;
+    cursor: default;
+  }
+
   &:hover {
     opacity: .9;
   }

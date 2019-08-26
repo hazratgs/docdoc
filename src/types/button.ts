@@ -1,5 +1,6 @@
 interface IButton {
   text: string
+  disabled: boolean
   handle: () => void
 }
 

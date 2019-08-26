@@ -3,10 +3,10 @@ import IButton from '../../types/button'
 import { Button as Element } from './styles'
 
 const Button = (props: IButton) => {
-  const { text, handle } = props
+  const { text, disabled, handle } = props
 
   return (
-    <Element>{text}</Element>
+    <Element disabled={disabled} onClick={handle}>{text}</Element>
   )
 }
 
