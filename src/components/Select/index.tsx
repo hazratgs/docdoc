@@ -5,7 +5,7 @@ import { Container, Select as Element } from './styles'
 const Select = (props: ISelect) => {
   const { title, values, handle } = props
   const items = values.map((item: string) => {
-    return <option>{item}</option>
+    return <option key={item}>{item}</option>
   })
 
   const _handle = (e: React.SyntheticEvent<HTMLSelectElement>) =>
