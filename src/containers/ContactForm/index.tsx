@@ -71,7 +71,7 @@ const ContactForm = (props: IProps) => {
       </Row>
       <Row>
         <Input
-          type='mobile'
+          type='mask'
           mask='+7 (111) 111-11-11'
           title='Телефон'
           placeholder='+79282194199'

@@ -1,5 +1,5 @@
 interface IInput {
-  type: 'text' | 'mobile'
+  type: 'text' | 'mask'
   title: string
   placeholder: string
   value?: string

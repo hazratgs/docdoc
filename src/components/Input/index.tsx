@@ -19,7 +19,7 @@ const Input = (props: IInput) => {
           onChange={_handle}
         />
       )}
-      {type === 'mobile' && (
+      {type === 'mask' && (
         <MaskedInput
           mask={mask}
           placeholder={placeholder}

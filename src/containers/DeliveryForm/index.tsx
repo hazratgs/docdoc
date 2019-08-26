@@ -112,7 +112,7 @@ const DeliveryForm = (props: IProps) => {
               value={city}
             />
             <Input
-              type='mobile'
+              type='mask'
               mask='111111'
               title='Индекс'
               placeholder='398000'
@@ -134,7 +134,7 @@ const DeliveryForm = (props: IProps) => {
           </Row>
           <Row>
             <Input
-              type='mobile'
+              type='mask'
               mask='11/11/1111'
               title='Дата доставки'
               placeholder='24/05/2017'
