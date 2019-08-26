@@ -8,9 +8,8 @@ const Select = (props: ISelect) => {
     return <option>{item}</option>
   })
 
-  const _handle = () => {
-
-  }
+  const _handle = (e: React.SyntheticEvent<HTMLSelectElement>) =>
+    handle(e.currentTarget.value)
 
   return (
     <Container>
